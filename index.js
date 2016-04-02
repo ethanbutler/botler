@@ -6,8 +6,8 @@ http.createServer(function(req, res){
   Tweets.getTweets(function(tweets){
     var markov = Markov(1)
     markov.seed(tweets, function(){
-      var key = m.pick()
-      var text = m.fill(key,12).join(' ')
+      var key = markov.pick()
+      var text = markov.fill(key,12).join(' ')
       res.writeHead(200, {'Content-Type': 'text/plain'})
       res.end(text)
     })
