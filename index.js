@@ -1,13 +1,14 @@
 var http = require('http')
-var Tweets = require('./gettweets')
+var fs = require('fs')
 var Markov = require('markov')
 
 http.createServer(function(req, res){
-  Tweets.getTweets(function(tweets){
-    var markov = Markov(3)
-    markov.seed(tweets, function(){
+  fs.readFile('./ethan.txt', 'utf8', function(err, data){
+    if(err) throw err
+    var markov = new Markov(6)
+    markov.seed(data, function(){
       var key = markov.pick()
-      var text = markov.fill(key,5).join(' ')
+      var text = markov.fill(key,3).join(' ')
       res.writeHead(200, {'Content-Type': 'application/json'})
       res.end(JSON.stringify({
         text: text
