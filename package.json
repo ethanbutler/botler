@@ -9,6 +9,7 @@
   "author": "Ethan Butler",
   "license": "ISC",
   "devDependencies": {
+    "fs": "0.0.2",
     "http": "0.0.0",
     "markov": "0.0.7",
     "twitter": "^1.2.5"
