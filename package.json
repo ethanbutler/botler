@@ -1,0 +1,16 @@
+{
+  "name": "ethanbotler",
+  "version": "0.0.1",
+  "description": "A Slackbot that generates markov chain responses based on a user's recent tweets.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Ethan Butler",
+  "license": "ISC",
+  "devDependencies": {
+    "http": "0.0.0",
+    "markov": "0.0.7",
+    "twitter": "^1.2.5"
+  }
+}
