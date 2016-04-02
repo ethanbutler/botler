@@ -18,6 +18,6 @@ Approximations are returned a JSON object with just a `text` property – this i
 
 #### Why is `node_modules` being tracked?
 
-Because I'm also deploying this to heroku and I'm too scared to add it to the `.gitignore.`
+Because I'm also deploying this to Heroku and I'm too scared to add it to the `.gitignore.`
 
 I'm bad at programming.
