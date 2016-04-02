@@ -10,7 +10,9 @@ http.createServer(function(req, res){
       var key = markov.pick()
       var text = markov.fill(key,10).join(' ')
       res.writeHead(200, {'Content-Type': 'application/json'})
-      res.end(text)
+      res.end(JSON.stringify({
+        text: text
+      }))
     })
   })
 }).listen(process.env.PORT || 3000)
