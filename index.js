@@ -4,10 +4,10 @@ var Markov = require('markov')
 
 http.createServer(function(req, res){
   Tweets.getTweets(function(tweets){
-    var markov = Markov(2)
+    var markov = Markov(6)
     markov.seed(tweets, function(){
       var key = markov.pick()
-      var text = markov.fill(key,10).join(' ')
+      var text = markov.fill(key,2).join(' ')
       res.writeHead(200, {'Content-Type': 'application/json'})
       res.end(JSON.stringify({
         text: text
